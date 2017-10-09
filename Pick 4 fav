@@ -14,3 +14,9 @@ Dai:
     2/ Stage sound and lighting control
     3/ Capture sound using mic, get frequency and derive musical note (useful for musicians)
     4/ A light that adjusts brightness to the time of day and amount of ambient light
+
+Dawit's Choice:
+    1. Stage sound and lighting control
+    2. Capture sound using mic, get frequency and derive musical note (useful for musicians)
+    3. system control head+cooling at home base on temperture outside 
+    4. Home brewer: I found an example online. https://makezine.com/2014/03/28/homebrewing-and-arduino-the-perfect-recipe/
