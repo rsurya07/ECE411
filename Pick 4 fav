@@ -20,3 +20,9 @@ Dawit's Choice:
     2. Capture sound using mic, get frequency and derive musical note (useful for musicians)
     3. system control head+cooling at home base on temperture outside 
     4. Home brewer: I found an example online. https://makezine.com/2014/03/28/homebrewing-and-arduino-the-perfect-recipe/
+    
+Surya:
+    1. system control head+cooling at home base on temperture outside 
+    2. A light that adjusts brightness to the time of day and amount of ambient light
+    3. Tic Tac Toe game with different leds in place of circle and crosses, and buttons to activate led
+    4. Stage sound and lighting control
