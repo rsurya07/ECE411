@@ -1,0 +1,230 @@
+﻿SmarThermo
+
+
+HIGH LEVEL ALGORITHM
+
+
+Display on
+Auto on
+Check for button push -- Sense button 
+        If button is pushed, then SVC POT
+        ELSE, SVC AUTO
+
+
+POT: 
+Turn auto off
+Read POT
+Display POT value
+Wait 5 sec
+        If POT value < room_temp
+                Lower temp to POT value (setpoint)
+        Else, raise temp to POT value
+
+
+AUTO:
+Turn auto on
+Display room temp
+If room_temp > 75
+        Lower temp to LE 75 (setpoint)
+Else if room_temp < 65
+        Raise temp to GE 65 (setpoint)
+Else, do nothing
+
+
+CONTROL:
+Measure room_ temp
+Compare room_temp  to setpoint
+        If room_temp = setpoint ± 3
+                Check in 5 minutes
+                Return to CONTROL
+        Else if room_temp > setpoint + 3
+                Turn on fan
+                Turn off heater
+                Return to CONTROL
+        Else if room_temp < setpoint - 3
+                Turn on heater
+                Turn off fan
+                Return to CONTROL
+
+
+Inputs: 2 and 3
+Direction: DDRx
+Output: PORTx
+Input: PINx
+
+
+Outputs: 0 and 1
+
+
+DDRB = 0b00000011 = 0x01                    // Set bit 0 and 1 as output
+PORTB = 0x00                                // Output reset
+
+
+PORTB &= 0b00000001 = 0x01                  // RMW bit 0 
+PORTB &= 0b00000010 =0x02                   // RMW bit 1
+
+
+________________
+
+
+CODE:
+
+
+Display on
+/*
+Auto on
+Check for button push -- Sense button 
+        If button is pushed, then SVC POT
+        ELSE, SVC AUTO
+*/
+#define toggle_pin(port, pin) (port ^=pin)                 //toggle
+#define clear_pin(port, pin) (port, pin) (port &= ~pin)
+#include <util/delay.h>
+#include <avr/io.h>
+#include <avr/sfr_defs.h>
+
+
+Int main(void)
+{
+        DDRB = 0x02;                        // diretion
+        PORTB = 0x01;                       // pin PB 0
+
+
+        while(1)
+        {
+                If (bit_is_clear(PINB, 0))
+{
+        toggle_pin(PORTB, 2);
+        _delay_ms(100);
+}
+else
+clear_pin(PORTB, 2);        
+        }
+}
+
+
+
+
+/*
+POT: 
+
+
+Turn auto off
+Read POT
+Display POT value
+Wait 5 sec
+Go to CONTROL
+*/
+void pot ()
+{
+        Int potValue = PORTX; // input sensor
+        // pot display code
+        delay(/*5000*/)         //delay 5 sec
+        potValue = PORTX;         // new value
+        control (potValue)      // Control procedure with setpoint
+        return;
+}
+
+
+
+
+AUTO:
+/*
+Turn auto on
+Display room temp
+If room_temp > 75
+        Lower temp to LE 75 (setpoint)
+Else if room_temp < 65
+        Raise temp to GE 65 (setpoint)
+Else, do nothing
+*/
+void autoOn ()
+{
+        If (room_temp > 75) {
+                fanOn ();
+        }
+        else if (room_temp < 65) {
+                heatOn ();
+        }
+        else
+        return;
+}
+
+
+CONTROL:
+/*
+Measure room_ temp
+Compare room_temp  to setpoint
+        If room_temp = setpoint ± 3
+                Check in 5 minutes
+                Return to CONTROL
+        Else if room_temp > setpoint + 3
+                Turn on fan
+                Turn off heater
+                Return to CONTROL
+        Else if room_temp < setpoint - 3
+                Turn on heater
+                Turn off fan
+                Return to CONTROL
+*/
+Int control (int setPoint)
+{
+room_temp = PORTX;        //Sensor value
+
+
+        if ((room_temp <= setPoint+3)&&(room_temp >=setPoint-3))
+        {
+                delay(50000) // delay 5 min
+        }
+        else if ( room_temp > setPoint + 3)
+        {
+                fanOn();
+        }
+        else if ( room_temp < setPoint - 3)
+        {
+                heatOn();
+        }
+}
+/*
+FANON:
+        Turn fan on
+        Turn heat off
+*/
+void fanOn ()
+{
+        //PORTX = value;
+        //PORTY= value;
+        return;
+}
+HEATON:
+        Turn heat on
+        Turn fan off
+
+
+void heatOn ()
+{
+        //PORTX = value;
+        //PORTY= value;
+        return;
+}
+
+
+ 
+
+
+
+
+
+
+
+
+________________
+
+
+Resources:
+
+
+1. http://www.nongnu.org/avr-libc/user-manual/group__avr__interrupts.html
+2. http://www.atmel.com/webdoc/avrlibcreferencemanual/group__avr__interrupts.html
+3. http://www.avr-tutorials.com/interrupts/about-avr-8-bit-microcontrollers-interrupts
+4. 5.
