@@ -160,9 +160,11 @@
 <plain>
 <wire x1="0" y1="0" x2="100.0052" y2="0" width="0" layer="20"/>
 <wire x1="100.0052" y1="0" x2="100.0052" y2="79.9848" width="0" layer="20"/>
-<wire x1="100.0052" y1="79.9848" x2="0" y2="79.68" width="0" layer="20"/>
-<wire x1="0" y1="79.68" x2="0" y2="0" width="0" layer="20"/>
-<text x="15.24" y="74.93" size="1.778" layer="21">Group 9</text>
+<wire x1="100.0052" y1="79.9848" x2="0" y2="79.9848" width="0" layer="20"/>
+<wire x1="0" y1="79.9848" x2="0" y2="0" width="0" layer="20"/>
+<text x="68.834" y="74.168" size="1.778" layer="21" rot="R180">Group 9</text>
+<text x="60.198" y="68.326" size="1.778" layer="21">Version 1.0</text>
+<text x="59.944" y="76.708" size="1.778" layer="21">Temperature Control Board</text>
 </plain>
 <libraries>
 <library name="capacitor-wima" urn="urn:adsk.eagle:library:116">
@@ -2137,10 +2139,10 @@ Please make sure your boards conform to these design rules.</description>
 <attribute name="PROD_ID" value="DIO-08794" x="7.62" y="52.07" size="1.778" layer="27" rot="R90" display="off"/>
 </element>
 <element name="FAN" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02/90" package3d_urn="urn:adsk.eagle:package:22437/1" value="" x="3.81" y="60.96" rot="R90"/>
-<element name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="MOUNT-HOLE3.0" x="95.25" y="6.35"/>
+<element name="H1" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="MOUNT-HOLE3.0" x="94.742" y="4.826"/>
 <element name="H2" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="MOUNT-HOLE3.0" x="5.08" y="5.08"/>
 <element name="H3" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="MOUNT-HOLE3.0" x="5.08" y="74.93"/>
-<element name="H4" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="MOUNT-HOLE3.0" x="95.25" y="74.93"/>
+<element name="H4" library="holes" library_urn="urn:adsk.eagle:library:237" package="3,0" package3d_urn="urn:adsk.eagle:package:14277/1" value="MOUNT-HOLE3.0" x="95.25" y="75.184"/>
 <element name="HEAT_ELMNT" library="pinhead" library_urn="urn:adsk.eagle:library:325" package="1X02/90" package3d_urn="urn:adsk.eagle:package:22437/1" value="" x="3.81" y="44.45" rot="R90"/>
 <element name="J1" library="SparkFun-Connectors" package="2X3-NS" value="AVR_SPI_PRG_6NS" x="67.31" y="24.13" rot="R180"/>
 <element name="J3" library="SparkFun-Connectors" package="POWER_JACK_PTH" value="POWER_JACKPTH" x="-1.27" y="30.48" rot="R270">
@@ -2512,13 +2514,13 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="23.368" y1="53.086" x2="26.96" y2="53.015" width="0.254" layer="1"/>
 <wire x1="23.252953125" y1="53.0127875" x2="26.96" y2="52.365" width="0.254" layer="1"/>
 <wire x1="26.96" y1="52.365" x2="20.32" y2="47.498" width="0.254" layer="1"/>
-<wire x1="20.32" y1="47.498" x2="11.176" y2="47.498" width="0.254" layer="1"/>
-<wire x1="11.176" y1="47.498" x2="8.636" y2="38.354" width="0.254" layer="1"/>
-<wire x1="8.636" y1="38.354" x2="8.726290625" y2="42.086" width="0.254" layer="1"/>
+<wire x1="20.32" y1="47.498" x2="10.922" y2="47.498" width="0.254" layer="1"/>
+<wire x1="10.922" y1="47.498" x2="8.89" y2="38.608" width="0.254" layer="1"/>
+<wire x1="8.89" y1="38.608" x2="8.726290625" y2="42.086" width="0.254" layer="1"/>
 <wire x1="8.726290625" y1="42.086" x2="8.83515" y2="42.086" width="0.254" layer="1"/>
 <wire x1="8.83515" y1="42.086" x2="9.476" y2="42.72685" width="0.254" layer="1"/>
 <wire x1="9.476" y1="42.72685" x2="9.476" y2="43.63315" width="0.254" layer="1"/>
-<wire x1="9.476" y1="43.63315" x2="8.83515" y2="44.274" width="0.254" layer="1"/>
+<wire x1="8.83515" y1="44.274" x2="9.476" y2="43.63315" width="0.254" layer="1"/>
 <wire x1="6.40485" y1="44.626" x2="5.764" y2="45.26685" width="0.254" layer="1"/>
 <wire x1="5.764" y1="45.26685" x2="5.764" y2="46.17315" width="0.254" layer="1"/>
 <wire x1="9.476" y1="59.23685" x2="9.476" y2="60.14315" width="0.254" layer="1"/>
