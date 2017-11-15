@@ -2583,6 +2583,36 @@ Please make sure your boards conform to these design rules.</description>
 <contactref element="FAN" pad="1"/>
 <wire x1="7.62" y1="53.34" x2="7.62" y2="59.69" width="0.254" layer="16"/>
 </signal>
+<signal name="N$1">
+<via x="97.282" y="47.752" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="N$23">
+<via x="87.884" y="68.072" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="N$24">
+<via x="87.884" y="35.814" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="N$25">
+<via x="85.09" y="59.436" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="N$27">
+<via x="62.484" y="16.256" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="N$28">
+<via x="87.884" y="4.572" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="N$29">
+<via x="15.748" y="34.036" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="N$30">
+<via x="5.842" y="22.352" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="N$31">
+<via x="6.604" y="67.31" extent="1-16" drill="0.35"/>
+</signal>
+<signal name="N$32">
+<via x="12.954" y="75.184" extent="1-16" drill="0.35"/>
+</signal>
 </signals>
 </board>
 </drawing>
