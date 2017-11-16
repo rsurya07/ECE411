@@ -2281,6 +2281,7 @@ Please make sure your boards conform to these design rules.</description>
 <via x="63.5" y="3.81" extent="1-16" drill="0.35"/>
 <via x="27.94" y="2.54" extent="1-16" drill="0.35"/>
 <via x="60.96" y="49.53" extent="1-16" drill="0.35"/>
+<via x="33.02" y="61.976" extent="1-16" drill="0.35"/>
 </signal>
 <signal name="N$2">
 <contactref element="TMP36" pad="2"/>
@@ -2523,7 +2524,7 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="6.40485" y1="63.324" x2="8.83515" y2="63.324" width="0.254" layer="1"/>
 <wire x1="8.83515" y1="63.324" x2="9.230546875" y2="62.928603125" width="0.254" layer="1"/>
 <wire x1="23.671" y1="58.483875" x2="23.939875" y2="58.215" width="0.254" layer="1"/>
-<wire x1="9.292346875" y1="65.483" x2="9.398" y2="69.85" width="0.254" layer="1"/>
+<wire x1="25.294346875" y1="65.229" x2="25.4" y2="69.596" width="0.254" layer="1"/>
 <wire x1="23.939875" y1="58.215" x2="29.146125" y2="58.215" width="0.254" layer="1"/>
 <wire x1="9.170546875" y1="60.448603125" x2="9.186971875" y2="61.1274875" width="0.254" layer="1"/>
 <wire x1="9.186971875" y1="61.1274875" x2="8.83515" y2="61.136" width="0.254" layer="1"/>
@@ -2535,8 +2536,8 @@ Please make sure your boards conform to these design rules.</description>
 <wire x1="34.988125" y1="58.723" x2="38.562" y2="62.296875" width="0.254" layer="1"/>
 <wire x1="38.562" y1="62.296875" x2="38.562" y2="64.13751875" width="0.254" layer="1"/>
 <wire x1="38.562" y1="64.13751875" x2="37.21651875" y2="65.483" width="0.254" layer="1"/>
-<wire x1="37.21651875" y1="65.483" x2="9.292346875" y2="65.483" width="0.254" layer="1"/>
-<wire x1="9.398" y1="69.85" x2="28.956" y2="70.104" width="0.254" layer="1"/>
+<wire x1="37.21651875" y1="65.483" x2="25.294346875" y2="65.229" width="0.254" layer="1"/>
+<wire x1="25.4" y1="69.596" x2="28.956" y2="70.104" width="0.254" layer="1"/>
 <wire x1="28.956" y1="70.104" x2="29.972" y2="68.58" width="0.254" layer="1"/>
 <wire x1="29.972" y1="68.58" x2="40.132" y2="67.818" width="0.254" layer="1"/>
 <wire x1="40.132" y1="67.818" x2="40.132" y2="46.482" width="0.254" layer="1"/>
