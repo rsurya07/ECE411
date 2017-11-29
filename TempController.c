@@ -291,6 +291,9 @@ int main(void)
 				// Use this pot value to set temp -- GO TO CONTROL
 				potValue = ADCH;
 				potValue = (potValue/256)*5*100;
+                    
+                potValue= (potValue/12.5)+50;
+                    
 				LCD_setCursor(1, 1);
 				itoa(potValue, buff, 10);
 				LCD_Disp(buff);																				// capture pot value
