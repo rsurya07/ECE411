@@ -11188,9 +11188,9 @@ LED</description>
 <net name="N$5" class="0">
 <segment>
 <pinref part="U2" gate="G$1" pin="RS"/>
-<wire x1="152.4" y1="101.6" x2="152.4" y2="30.48" width="0.1524" layer="91"/>
-<pinref part="U1" gate="G$1" pin="PD1(TXD)"/>
-<wire x1="152.4" y1="30.48" x2="116.84" y2="30.48" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="101.6" x2="152.4" y2="27.94" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="PD2(INT0)"/>
+<wire x1="116.84" y1="27.94" x2="152.4" y2="27.94" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
