@@ -158,7 +158,7 @@ void fanOn()
 {
 	LCD_setCursor(7,0);
 	LCD_Disp("fan");
-	PORTB &= 0 << PINB2;								// heat off;
+	PORTB &= 0 << PINB0;								// heat off;
 	//PORTB = 0xFF;
 	PORTB |= 1 << PINB1;								// fan on blu light on
 	//PORTD |= 1 << PIND6;								// Display on
@@ -173,7 +173,7 @@ void heatOn()
 	//PORTB |= 1 << PINB2;								// heat on red light on
 	PORTB &= 0 << PINB1;								// fan off;
 	//PORTD |= 1 << PIND6;								// Display on
-	PORTB |= 1 << PINB2;								// heat on red light on
+	PORTB |= 1 << PINB0;								// heat on red light on
 	return;
 }
 
