@@ -1,0 +1,29 @@
+Software Design: High Level Algorithm
+Display on
+Auto on
+Check for button push -- Sense button 
+       If button is pushed, then SVC POT
+       ELSE, SVC AUTO
+POT: 
+Turn auto off
+Read POT
+Display POT value
+Go to Control
+AUTO:
+Turn auto on
+Set Comfy Zone Value (set point)
+Go to Control
+CONTROL:
+Measure room_ temp
+Compare room_temp  to setpoint or pot value
+       If room_temp = setpoint ± 3
+               Check again (POLL)
+       Else if room_temp > setpoint + 3
+               Turn on fan
+               Turn off heater
+               Return to CONTROL
+       Else if room_temp < setpoint - 3
+               Turn on heater
+               Turn off fan
+               Return to CONTROL
+
