@@ -1,35 +1,24 @@
-Partlist exported from /Users/erikfox/Downloads/ECE411---Group-9-master/SmartThermo1.9.sch at 11/20/17 6:06 PM
 
-Part       Value           Device               Package          Description                                MF MPN      OC_FARNELL OC_NEWARK PROD_ID     VALUE       
-C2         10uF            C7.5/3               C7.5B3           CAPACITOR                                                                                           
-C3         10uF            C7.5/3               C7.5B3           CAPACITOR                                                                                           
-C4         100nF           C2.5/2               C2.5-2           CAPACITOR                                                                                           
-C5         100nF           C2.5/2               C2.5-2           CAPACITOR                                                                                           
-C6         100nF           C2.5/2               C2.5-2           CAPACITOR                                                                                           
-D1         3A/40V/500mV    DIODE-SCHOTTKY-B340A SMA-DIODE        Schottky diode                                                              DIO-09886   3A/40V/500mV
-D2         3A/40V/500mV    DIODE-SCHOTTKY-B340A SMA-DIODE        Schottky diode                                                              DIO-09886   3A/40V/500mV
-D3                         LED3MM               LED_3MM          LED (Generic)                                                               DIO-08794               
-D4                         LED3MM               LED_3MM          LED (Generic)                                                               DIO-08794               
-FAN                        PINHD-1X2/90         1X02/90          PIN HEADER                                                                                          
-H1         MOUNT-HOLE3.0   MOUNT-HOLE3.0        3,0              MOUNTING HOLE with drill center marker                                                              
-H2         MOUNT-HOLE3.0   MOUNT-HOLE3.0        3,0              MOUNTING HOLE with drill center marker                                                              
-H3         MOUNT-HOLE3.0   MOUNT-HOLE3.0        3,0              MOUNTING HOLE with drill center marker                                                              
-H4         MOUNT-HOLE3.0   MOUNT-HOLE3.0        3,0              MOUNTING HOLE with drill center marker                                                              
-HEAT_ELMNT                 PINHD-1X2/90         1X02/90          PIN HEADER                                                                                          
-J1         AVR_SPI_PRG_6NS AVR_SPI_PRG_6NS      2X3-NS           AVR ISP 6 Pin                                                                                       
-J3         POWER_JACKPTH   POWER_JACKPTH        POWER_JACK_PTH   Power Jack                                                                  CONN-08197              
-L7805                      78XXL                78XXL            VOLTAGE REGULATOR                                                                                   
-P          10K             POT_SWITCHPOT_PTH    POT_PTH          Potentiometer w/ switch.                                                                            
-P1         10K             POT_SWITCHPOT_PTH    POT_PTH          Potentiometer w/ switch.                                                                            
-Q1         IRF7509         IRF7509              MSOP8            Dual N and P Channel MOSFET                                                 TRANS-07913             
-Q2         IRF7509         IRF7509              MSOP8            Dual N and P Channel MOSFET                                                 TRANS-07913             
-R1         10K             RESISTOR1206         1206             Resistor                                                                                            
-R2         10K             RESISTOR1206         1206             Resistor                                                                                            
-R3         47k             47KOHM-0603-1/10W-1% 0603             47kΩ resistor                                                               RES-07871   47k         
-R4         47k             47KOHM-0603-1/10W-1% 0603             47kΩ resistor                                                               RES-07871   47k         
-R5         12k             R-US_0204/5          0204/5           RESISTOR, American symbol                                                                           
-R6         10k             R-US_0204/5          0204/5           RESISTOR, American symbol                                                                           
-S1                         10-XX                B3F-10XX         OMRON SWITCH                                  B3F-1000 176432     36M3542                           
-TMP36                      TMP36GT9             TO-92            Precision degC temp sensor, analog out                                                              
-U1         ATMEGA328P_PDIP ATMEGA328P_PDIP      DIL28-3          uC used in the Arduino                                                                              
-U2         LCD-16X2NOHOLES LCD-16X2NOHOLES      LCD-16X2_NOHOLES Standard text-only 16x2 parallel input LCD                                                          
+
+1	Dual Channel Mosfet- SMT	IRF7509TRPBF			Digikey		$0.67	2
+2	10 kOhm Resistor -SMT		RC1206JR-0710KL			Digikey		$0.03	2
+3	Switch				B3F-1000			Digikey		$0.34	1
+4	47 kOhm Resistor -SMT		RC0603FR-0747KL			Digikey		$0.15	2
+5	Potentiometer - Linear		EVU-F2AF30B14			Digikey		$0.90	2
+6	Power Jack			PJ-002B				Digikey		$0.60	1
+7	AVR ISP Pins			1465				Digikey		$0.95	1
+8	Schottky Diode-SMT		B340A-13-F			Digikey		$0.37	2
+9	Heating Pad			ADA1481				Amazon		$2.58	1
+10	LCD 				Arducam 1602 16x2 LCD		Amazon		$3.00	1
+11	Fan				SUNON EE80251S1-000U-A99	Amazon		$1.27	1
+12	Voltage regulator		L7085				Amazon		$0.40	1
+13	Temperature sensor 		TMP36				Amazon		$1.92	1
+14	Microprocessor			Atmega 328			EPL		$5.00	1
+15	100nF Capacitor							EPL		$0.25	3
+16	10uF Capacitor							EPL		$0.25	2
+17	10kOhm Resistor							EPL		$0.10	1
+18	12kOhm Resistor							EPL		$0.10	1
+19	100 Ohm Resistor						EPL		$0.10	2
+20	LED								EPL		$0.25	1
+21	PCB								OSHPARK		$17.44	1
+	Total	$39.61			
