@@ -1,8 +1,13 @@
 /*
- * ADCexample.c
- *
- * Created: 4/13/2013 5:22:48 PM
+Temperature Controller
+ECE411 Practicum Project
+Team 9:
+ Dai Ho, Dawit Amare, Erik Fox, Surya Ravikumar
  
+Description: This program/ firmware controlls temperature inddors. It has User mode and Auto mode.
+User mode is activated with a toggle button. Once user mode is activated, user can set desired temperature outside the
+comfy zone: 75 +/- 3.
+In Auto Mode, system controlls temperature with an intent to keep temp in the comfy zone. It controlls fan or heater accordingly
  */
  
 //#define F_CPU   8000000
@@ -180,23 +185,18 @@ void heatOn()
  
 void control (int setPoint, int room_temp)
 {
-	//room_temp = 75;	//PC0 value Sensor value -----Surya code
-
 	room_temp = (((temp()/1024.0 * 5 ) - 0.5 ) * 100);
 	room_temp = (room_temp * 9 / 5) + 32;
 	
 	if ((room_temp <= setPoint+3)&&(room_temp >=setPoint-3))
 	{
-		_delay_ms(50); // delay 5 min
-		// Display Temp -----------------------Dai code
-		//room_temp = 
+		_delay_ms(50); 
+		// Display Temp 
 		PORTB &= 0 << PINB1;								// fan off;
-		//PORTD |= 1 << PIND6;								// Display on
 		PORTB &= 0 << PINB2;								// heat on red light on
 		
 	}
-	//PORTB |= 1 << PINB2;								// heat on red light on
-	 else if ( room_temp > setPoint + 3)
+	else if ( room_temp > setPoint + 3)
 	{
 		fanOn();
 	}
@@ -220,19 +220,17 @@ void potSvc ()
 int main(void)
 {
 	
-	DDRD = 0xFE; //(1 << PORTD);								// Output LED on PD6 -- LCD indicator
+	DDRD = 0xFE; //(1 << PORTD);							// Output LED on PD6 -- LCD indicator
 	DDRB = (1 << PORTB1);								// Output LED on PD6 -- FAN indicator
 	DDRB = (1 << PORTB2);								// Output LED on PD6 -- Heat indicator
-	//PORTD = (1<<PORTD0);
-	//PORTB |= 1 << PINB2;								// heat on red light on
+	
 	int cur = PIND;
 	int prev = PIND;
 	int toggle = 1;
 	float potValue = 0;
 	int current_temp = 0;
 	int setTo = 0;
-	//int tem;
-	
+		
 	LCD_Init();
 	
 	current_temp = temp();
@@ -240,7 +238,7 @@ int main(void)
 	current_temp = (current_temp * 9 / 5) + 32;
 	
 	_delay_ms(500);
-	// Display Temp-----------------------Put code here
+	// Display Temp
 	LCD_setCursor(2,0);
 	itoa(current_temp, buff, 10);
 	LCD_Disp(buff);
@@ -261,91 +259,53 @@ int main(void)
 		LCD_Disp(buff);
 		LCD_Disp("F");
 		
-//PORTB |= 1 << PINB2;								// heat on red light on
 		// Check for button press-------------Code is below
 		cur = PIND;
-		
-		//PORTD ^= 1 << PIND6;
-		//if (bit_is_clear(PIND, 0)==0)
 		if ((prev & (1 << PIND0))<(cur & (1 << PIND0)))
 		{
-		
 			cur = PIND;
-			toggle ^= 1;						// toggle is needed to  switch between Auto and User mode
+			toggle ^= 1;			// toggle is needed to  switch between Auto and User mode
 		}
 		prev = PIND;
 		_delay_ms(WAIT_MS); 			// Wait for debounce.
 			switch (toggle)
 			{
-			case 0:				// Turn USER on
-				//PORTD &= 0 << PIND6;
-				//PORTB ^= 1 << PINB1;
+			case 0:						// Turn USER on
+				
 				// Turn Auto OFF------------------|CODE HERE
 				// Read POT-----------------------|CODE HERE
 				_delay_ms(5000); 
 				potSvc();
 				ADCSRA |= (1<<ADSC);			// Start Conversion pot input
-				while (BIT_IS_SET(ADCSRA, ADSC)) {} // poll until ADSC bit is set
+				while (BIT_IS_SET(ADCSRA, ADSC)) {} 	// poll until ADSC bit is set
 				// Quantize potvalue between 50c to 90c
 				// Get pot value and display here  
 				// Use this pot value to set temp -- GO TO CONTROL
 				potValue = ADCH;
 				potValue = (potValue/256)*5*100;
                     
-                potValue= (potValue/12.5)+50;
+               			potValue= (potValue/12.5)+50;
                     
 				LCD_setCursor(1, 1);
 				itoa(potValue, buff, 10);
 				LCD_Disp(buff);																				// capture pot value
-			/*	if (potValue == 0)
-				{
-					PORTD &= 0 <<PIND6;
-				}
-				else if (potValue > 100)
-				{
-					PORTD |= 1 <<PIND6;
-				} 
-			*/
+			
 				// Display POT value--------------|CODE HERE
-				// Wait 5 sec---------------------|CODE HERE
 				// Go to Control with POT Value---|CODE HERE
-				//goto CONTROL-- procedure takes setPoint and decides on temp value
-				//current_temp = 50;
-				//if (potValue > 100)
+				// CONTROL-- procedure takes setPoint and decides on temp value
+				
 				control(potValue, current_temp);
-				//else
-				//printf("Less than 100 '\n'");
-
 				break;
-			case 1:				// Turn AUTO on   **check auto again -- fix**
+			case 1:						// Turn AUTO on   
 				//PORTB &= 0 << PINB1;
 				//PORTD &= 0 << PIND6;
-				//_delay_ms(100); 
 				// Measure room temp
-				//current_temp = 50; //PC 0 value --- SURYA code
+				
 				setTo = 75;
-				//PORTB |= 1 << PINB2;								// heat on red light on
 				control(setTo, current_temp);
-				/*if (current_temp > 75) {
-					setTo = 65;
-					control(setTo, current_temp);		//goto CONTROL;
-				}
-				else if (current_temp < 65) {
-					setTo = 75;
-					control(setTo, current_temp);		//goto CONTROL;
-				}*/
-
-				// Display Room temp-------- DAI code
-			
 				break;
 			}
-						
-		//	PORTD ^= 1 << PIND6;
-			//PORTB ^= 1 << PINB1;			// Turn Fan on
-			//PORTB ^= 1 << PINB0;			// Turn heat on
-			
-		
-					 
+		 
 	 }
   
 }
